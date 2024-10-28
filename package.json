@@ -1,0 +1,11 @@
+{
+    "name": "com.brandonvance.vanceutility",
+    "version": "1.0.0",
+    "displayName": "Vance Utility",
+    "description": "Things i find useful",
+    "unity": "2020.3",
+    "author": {
+      "name": "Brandon Vance",
+      "email": "bvance800@gmail.com"
+    }
+  }
