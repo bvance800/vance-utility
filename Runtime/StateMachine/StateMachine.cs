@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace VanceUtility.StateMachine {
@@ -8,16 +9,32 @@ namespace VanceUtility.StateMachine {
     {
         IState _activeState;
 
-        // Start is called before the first frame update
-        void Start()
+        public void Input()
         {
-            
+            IState nextState = _activeState.Input();
+            if (nextState != null && nextState != _activeState)
+            {
+                ChangeState(nextState);
+            }
         }
 
-        // Update is called once per frame
-        void Update()
+        public void Update()
         {
-            
+            IState nextState = _activeState.Update();
+            if (nextState != null && nextState != _activeState)
+            {
+                ChangeState(nextState);
+            }
+        }
+
+        public void ChangeState(IState nextState) {
+            _activeState.OnStateExit();
+            _activeState = nextState;
+            _activeState.OnStateEnter();
+        }
+
+        public void SetState(IState state) {
+            _activeState = state;
         }
     }
 }
