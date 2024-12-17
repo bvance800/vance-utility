@@ -1,0 +1,20 @@
+**/.DS_Store
+
+# Allow specific folders and files
+!package.json
+!README.md
+!LICENSE.md
+!CHANGELOG.md
+
+Ensure .meta files are included, since Unity requires them
+!**/*.meta
+
+# Ignore unwanted files and folders within the package directories
+Runtime/[Ll]ibrary/
+Runtime/[Tt]emp/
+Runtime/[Oo]bj/
+Runtime/[Bb]uild/
+Editor/[Ll]ibrary/
+Editor/[Tt]emp/
+Editor/[Oo]bj/
+Editor/[Bb]uild/
